@@ -1,10 +1,6 @@
 
 #include "libft.h"
 
-
-
-
-
 int	main(void)
 {
 
@@ -86,7 +82,7 @@ int	main(void)
 	printf("> Hellow world : %lu\n", strlen("Hellow world"));
 	printf("< {} : %zu\n", ft_strlen(""));
 	printf("> {} : %lu\n", strlen(""));
-
+/*
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_memset]<-----\033[0m\n");
 	
@@ -122,7 +118,7 @@ int	main(void)
 	strcpy(s3, "hello there");
 	strcpy(s4, "hello there");
 	printf("< Hello there-> c - 13 :%s\n", (char *)ft_bzero(s3, 13));
-//	printf("Hello there-> c - 13 :%s\n", (char *)bzero(s4, 13));
+	printf(">Hello there-> c - 13 :error\n");
 
 	strcpy(s3, "hello there");
 	strcpy(s4, "hello there");
@@ -133,7 +129,7 @@ int	main(void)
 	strcpy(s4, "hello there");
 	printf("< Hello there-> c - 0 :%s\n", (char *)ft_bzero(s3, 0));
 	printf("> Hello there-> c - 0 :%s\n", (char *)bzero(s4, (0)));
-
+*/
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_memcpy]<-----\033[0m\n");
 	
@@ -162,6 +158,34 @@ int	main(void)
 	printf("< XXXXXXXXXXX-> hello theere - 0 :%s\n", (char *)ft_memcpy(dest1, src1, 0));
 	printf("> XXXXXXXXXXX-> hello theere - 0 :%s\n", (char *)memcpy(dest,  src1, 0));
 
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_memmove]<-----\033[0m\n");
+	
+	char	*d1;
+	char	d2[12];
+	char	*s1;
+	
+	d1 = (char *)malloc(1);
+	s1 = (char *)malloc(1);
+	printf("< NULL -> NULL - 2 :%s\n", (char *)ft_memmove(d1, s1, 2));
+	printf("> NULL -> NULL - 2 :%s\n", (char *)memcpy(d2,  s1, 0));
+/*	
+	strcpy(s1, "hello there");
+	strcpy(d1, "XXXXXXXXXXX");
+	strcpy(d2, "XXXXXXXXXXX");
+	printf("< XXXXXXXXXXX-> hello theere - 11 :%s\n", (char *)ft_memmove(d1, s1, 11));
+	printf("> XXXXXXXXXXX-> hello theere - 11 :%s\n", (char *)memmove(d1,  s1, 11));
+
+	strcpy(d1, "XXXXXXXXXXX");
+	strcpy(d2, "XXXXXXXXXXX");
+	printf("< XXXXXXXXXXX-> hello theere - 4 :%s\n", (char *)ft_memmove(d1, s1, 4));
+	printf("> XXXXXXXXXXX-> hello theere - 4 :%s\n", (char *)memmove(d1,  s1, 4));
+
+	strcpy(d1, "XXXXXXXXXXX");
+	strcpy(d2, "XXXXXXXXXXX");
+	printf("< XXXXXXXXXXX-> hello theere - 12 :%s\n", (char *)ft_memmove(d1, s1, 12));
+	printf("> XXXXXXXXXXX-> hello theere - 12 :%s\n", (char *)memmove(d2,  s1, 12));
+*/
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_strlcpy]<-----\033[0m\n");
 	
@@ -194,21 +218,61 @@ int	main(void)
 	
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_strlcat]<-----\033[0m\n");
-	char	*ptr;
 
-	ptr = (char *)malloc(11);
-	strcpy(ptr, "hello");
-	ft_strlcat(ptr, " there", 12);
-	printf("\n-%s-\n", ptr);
+	char	destino1[14] = "helo";
+	char	destino2[14] = "helo";
+	char	concate[] = " world";
 
+	printf("< %zu->", ft_strlcat(destino1, concate, 2));
+	printf("%s-\n", destino1);
+	printf("> %zu->", strlcat(destino2, concate, 2));
+	printf("%s-\n", destino2);
+	
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_strrchr]<-----\033[0m\n");
 
 	char	string[] = "";
-	printf("> emptyn -> o : %s\n", ft_strrchr(string, 'o'));
+	char	cadena[] = "hello world";
+	
+	printf("> hello world -> o : %s\n", ft_strrchr(string, 'o'));
+	printf("> %s\n", ft_strrchr(cadena, 'x'));
 
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_strncmp]<-----\033[0m\n");
 
+	char *big = "abcdef";
+	char *little = "abcdefghijklmnop";
+	
+	int i1 = ((strncmp(big, little, 6) > 0) ? 1 : ((strncmp(big, little, 6) < 0) ? -1 : 0));
+	int i2 = ((ft_strncmp(big, little, 6) > 0) ? 1 : ((ft_strncmp(big, little, 6) < 0) ? -1 : 0));
+	printf("<%i\n", i1);
+	printf(">%i\n", i2);
+
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_memcmp]<-----\033[0m\n");
+
+	char *big1 = "abcdef";
+	char *little1 = "abcdefghijklmnop";
+	
+	printf("<%i\n", memcmp(big1, little1, 7));
+	printf(">%i\n", ft_memcmp(big1, little1, 7));
+
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_atoi<-----\033[0m\n");
+
+	char	str_atoi[] = "12";
+	printf ("< %s->:%d\n", str_atoi, ft_atoi(str_atoi));
+	printf ("< %s->:%d\n", str_atoi, atoi(str_atoi));
+
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_strtrim<-----\033[0m\n");
+
+	const char		cdna[] = "jjjjHello worldjjjj";
+	const char		set[] = "j";
+
+	printf("<%s\n", ft_strtrim(cdna, set));
 
 	printf("\nyeah baby estoy fugosss");
+
 	return (0);
 }
