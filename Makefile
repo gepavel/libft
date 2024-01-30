@@ -3,7 +3,7 @@ NAME = libft.a
 
 CC = clang
 
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -Wall -Werror -Wextra  
 
 NAMELIB = libft.h
 

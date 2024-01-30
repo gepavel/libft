@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:28:00 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/22 22:35:07 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/01/30 17:21:59 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	i = 0;
 	if (!dest || !src)
 		return (dest);
-	 if (d_aux > s_aux)
-	 {
-		 while (len-- > 0)
-	 		 d_aux[len] = s_aux[len];
-	 }
-	else
+	if (d_aux > s_aux)
+	{
+		while (len-- > 0)
+			d_aux[len] = s_aux[len];
+	}
+	else if (d_aux <= s_aux)
 	{
 		while (i < len)
 		{
 			d_aux[i] = s_aux[i];
-        	i++;
+			i++;
 		}
-    }
+	}
 	return (dest);
 }

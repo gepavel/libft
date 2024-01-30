@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 00:28:13 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/23 01:11:50 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:00:07 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (s_len);
 	while (*src != '\0' && (dstsize - 1) > (d_len + i))
 	{
-		dst[d_len + i] =  src[i];
+		dst[d_len + i] = src[i];
 		i++;
 	}
 	dst[d_len + i] = '\0';

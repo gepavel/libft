@@ -1,12 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/30 14:33:13 by gepavel           #+#    #+#             */
+/*   Updated: 2024/01/30 14:34:47 by gepavel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_itoa(int n)
 {
-	char 		*str;
+	char			*str;
 	unsigned int	nb;
-	int		count;
+	int				count;
 
 	nb = n;
 	count = 0;
@@ -17,7 +27,8 @@ char	*ft_itoa(int n)
 	}
 	if (nb < 0)
 		count++;
-	if(!(str = malloc(count + 1)))
+	str = malloc(count + 1);
+	if (!str)
 		return (NULL);
 	str[count] = '\0';
 	while (count-- > 0)

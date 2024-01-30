@@ -6,25 +6,24 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:02:15 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/22 20:02:21 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:40:26 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int		negative;
-	int		i;
+	int			negative;
+	int			i;
 	char		*s;
 
 	s = (char *)str;
 	while (*s == ' ' || (*s > 8 && *s < 14))
-	       s++;
+		s++;
 	if (*s == '+' || *s == '-')
 	{
-		if(*s == '-')
+		if (*s == '-')
 			negative = -1;
 		s++;
 	}
@@ -36,5 +35,5 @@ int	ft_atoi(const char *str)
 	}
 	if (negative == (-1))
 		i *= negative;
-       return (i);
-}       
+	return (i);
+}
