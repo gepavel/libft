@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:32:49 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/22 21:59:52 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:52:30 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		i++;
 		if (!(i < n))
-			return (unsigned char)s1[i - 1] - (unsigned char)s2[i - 1];
+			return ((unsigned char)s1[i - 1] - (unsigned char)s2[i - 1]);
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

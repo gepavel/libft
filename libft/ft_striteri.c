@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 14:35:26 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 14:35:32 by gepavel          ###   ########.fr       */
+/*   Created: 2024/01/30 14:02:22 by gepavel           #+#    #+#             */
+/*   Updated: 2024/01/30 14:02:26 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 {
-	if (c >= '0' && c <= '9')
-		return (c);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

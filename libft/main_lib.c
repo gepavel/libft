@@ -1,10 +1,6 @@
 
 #include "libft.h"
 
-
-
-
-
 int	main(void)
 {
 
@@ -164,6 +160,7 @@ int	main(void)
 
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_memmove]<-----\033[0m\n");
+/*	
 	
 	char	*d1;
 	char	d2[12];
@@ -173,9 +170,9 @@ int	main(void)
 	s1 = (char *)malloc(1);
 	printf("< NULL -> NULL - 2 :%s\n", (char *)ft_memmove(d1, s1, 2));
 	printf("> NULL -> NULL - 2 :%s\n", (char *)memcpy(d2,  s1, 0));
-/*	
 	strcpy(s1, "hello there");
 	strcpy(d1, "XXXXXXXXXXX");
+
 	strcpy(d2, "XXXXXXXXXXX");
 	printf("< XXXXXXXXXXX-> hello theere - 11 :%s\n", (char *)ft_memmove(d1, s1, 11));
 	printf("> XXXXXXXXXXX-> hello theere - 11 :%s\n", (char *)memmove(d1,  s1, 11));
@@ -223,13 +220,13 @@ int	main(void)
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_strlcat]<-----\033[0m\n");
 
-	char	destino1[14] = "hel";
-	char	destino2[14] = "hel";
-	char	concate[] = " w";
+	char	destino1[14] = "helo";
+	char	destino2[14] = "helo";
+	char	concate[] = " world";
 
-	printf("< %zu->", ft_strlcat(destino1, concate, 6));
+	printf("< %zu->", ft_strlcat(destino1, concate, 2));
 	printf("%s-\n", destino1);
-	printf("> %zu->", strlcat(destino2, concate, 6));
+	printf("> %zu->", strlcat(destino2, concate, 2));
 	printf("%s-\n", destino2);
 	
 	printf("-----------------------------------------------------------------------------\n");
@@ -262,10 +259,46 @@ int	main(void)
 	printf(">%i\n", ft_memcmp(big1, little1, 7));
 
 	printf("-----------------------------------------------------------------------------\n");
-	printf("\033[0;35m----->[ft_strrchr<-----\033[0m\n");
+	printf("\033[0;35m----->[ft_atoi<-----\033[0m\n");
 
+	char	str_atoi[] = "12";
+	printf ("< %s->:%d\n", str_atoi, ft_atoi(str_atoi));
+	printf ("< %s->:%d\n", str_atoi, atoi(str_atoi));
 
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_strtrim<-----\033[0m\n");
 
+	const char		cdna[] = "        ";
+	//const char		set[] = " ";
+
+	printf("<%s\n", ft_strtrim(cdna, " "));
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_split<-----\033[0m\n");
+
+	const char	string2[] = "hello world i try to be gratfull with you";
+	char	**str_list; 
+	int		i = 0;
+
+	str_list = ft_split(string2, ' ');
+	while (*str_list[i] != '\0')
+	{
+		printf("<%s\n", &str_list[i++][0]);
+	}	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	printf("\nyeah baby estoy fugosss");
 	return (0);
 }

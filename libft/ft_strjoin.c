@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 14:35:26 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 14:35:32 by gepavel          ###   ########.fr       */
+/*   Created: 2024/01/30 14:01:29 by gepavel           #+#    #+#             */
+/*   Updated: 2024/01/30 14:01:51 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	if (c >= '0' && c <= '9')
-		return (c);
-	return (0);
+	char		*str;
+	size_t		s1_l;
+	size_t		s2_l;
+	size_t		i;
+	size_t		j;
+
+	s1_l = ft_strlen(s1);
+	s2_l = ft_strlen(s2);
+	str = (char *)malloc(s1_l + s2_l + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while ((char)s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while ((char)s2[j] != '\0')
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
 }
