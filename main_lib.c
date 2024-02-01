@@ -224,10 +224,12 @@ int	main(void)
 	char	destino2[14] = "helo";
 	char	concate[] = " world";
 
-	printf("< %zu->", ft_strlcat(destino1, concate, 2));
+	printf("< %zu->", ft_strlcat(destino1, concate, 0));
 	printf("%s-\n", destino1);
 	printf("> %zu->", strlcat(destino2, concate, 2));
 	printf("%s-\n", destino2);
+	printf("< %zu\n", ft_strlcat((void *)0, concate, 0));
+	printf("> %zu\n", strlcat((void *)0, concate, 0));;
 	
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_strrchr]<-----\033[0m\n");
@@ -248,6 +250,11 @@ int	main(void)
 	int i2 = ((ft_strncmp(big, little, 6) > 0) ? 1 : ((ft_strncmp(big, little, 6) < 0) ? -1 : 0));
 	printf("<%i\n", i1);
 	printf(">%i\n", i2);
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_memchr]<-----\033[0m\n");
+	char	strchr[] = "hello";
+	printf("<%s\n", ft_memchr(strchr, 'l', 2));
+	printf(">%s\n", memchr(strchr, 'l', 2));
 
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_memcmp]<-----\033[0m\n");
@@ -257,6 +264,19 @@ int	main(void)
 	
 	printf("<%i\n", memcmp(big1, little1, 7));
 	printf(">%i\n", ft_memcmp(big1, little1, 7));
+	
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_strnstr]<-----\033[0m\n");
+
+	char needle[] = "abcdef";
+	char hystack[] = "abcdefghijklmnop";
+	
+	printf("< %s [%s] -> %s\n", hystack, needle, ft_strnstr(hystack, needle, 6));
+	printf("> %s [%s] -> %s\n", hystack, needle, ft_strnstr(hystack, needle, 6));
+	printf("< %s [%s] -> %s\n", hystack, needle, ft_strnstr(hystack, needle, 0));
+	printf("> %s [%s] -> %s\n", hystack, needle, ft_strnstr(hystack, needle, 0));
+	printf("> void * [%s] -> %s\n", needle, strnstr((void *)0, needle, 0));
+	printf("< void * [%s] -> %s\n", needle, ft_strnstr((void *)0, needle, 0));
 
 	printf("-----------------------------------------------------------------------------\n");
 	printf("\033[0;35m----->[ft_atoi<-----\033[0m\n");
@@ -266,34 +286,38 @@ int	main(void)
 	printf ("< %s->:%d\n", str_atoi, atoi(str_atoi));
 
 	printf("-----------------------------------------------------------------------------\n");
-	printf("\033[0;35m----->[ft_strtrim<-----\033[0m\n");
+	printf("\033[0;35m----->[ft_strtrim]<-----\033[0m\n");
 
 	const char		cdna[] = "        ";
 	//const char		set[] = " ";
 
 	printf("<%s\n", ft_strtrim(cdna, " "));
 	printf("-----------------------------------------------------------------------------\n");
-	printf("\033[0;35m----->[ft_split<-----\033[0m\n");
-
-	const char	string2[] = "hello world i try to be gratfull with you";
+	printf("\033[0;35m----->[ft_split]<-----\033[0m\n");
+/*
+	const char	string2[] = "\0hello\0wprñd";
 	char	**str_list; 
 	int		i = 0;
 
-	str_list = ft_split(string2, ' ');
-	while (str_list[i][0] != '\0')
+	str_list = ft_split(string2, '\0');
+	while (*str_list[i] != '\0')
 	{
 		printf("<%s\n", &str_list[i++][0]);
-	}	
+	}
+*/
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	printf("-----------------------------------------------------------------------------\n");
+	printf("\033[0;35m----->[ft_itoa]<-----\033[0m\n");	
+
+	printf("%s\n", ft_itoa(INT_MAX));
+	printf("%s\n", ft_itoa(123));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-0));
+	printf("%s\n", ft_itoa(-9));
+	printf("%s\n", ft_itoa(-10));
+	printf("%s\n", ft_itoa(-876));
+	printf("%s\n", ft_itoa(-123));
+	printf("%s\n", ft_itoa(INT_MIN));
 	
 	
 	

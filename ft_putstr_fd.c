@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:08:54 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 14:08:57 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 18:35:49 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char *str, int fd)
 {
-	while (*str != '\0')
-		ft_putchar_fd(*str++, fd);
+	if (str)
+	{
+		while (*str != '\0')
+			ft_putchar_fd(*str++, fd);
+	}
 }
