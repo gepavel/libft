@@ -1,15 +1,24 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 18:43:58 by gepavel           #+#    #+#             */
+/*   Updated: 2024/02/01 18:52:47 by gepavel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <string.h>
+# include <ctype.h>
+# include <stdlib.h>
+# include <limits.h>
 
 /*---------------FUNCIONES LIBC---------------*/
 int			ft_isalpha(int c);
@@ -49,5 +58,5 @@ void		ft_putstr_fd(char *str, int fd);
 void		ft_putendl_fd(char *str, int c);
 void		ft_putnbr_fd(int n, int fd);
 
-
+/*---------------FUNCIONES BONUS---------------*/
 #endif

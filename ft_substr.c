@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:47:24 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/01 18:33:34 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 18:43:49 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char		*str;
 	size_t		i;
-	
+
 	if (!s)
 		return (NULL);
 	i = ft_strlen(s);
