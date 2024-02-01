@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 22:44:15 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/23 00:28:02 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 18:02:13 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	while (i > 0 && s[i] != c)
+	while (i > 0 && (char)s[i] != c)
 		i--;
-	if (s[i] == c)
+	if ((char)s[i] == c || !c)
 		return ((char *)&s[i]);
 	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:28:00 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 17:21:59 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:24:04 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	d_aux = (unsigned char *)dest;
 	s_aux = (unsigned char *)src;
 	i = 0;
-	if (!dest || !src)
-		return (dest);
+	if (!src && !dest && len > 0)
+		return (NULL);
 	if (d_aux > s_aux)
 	{
 		while (len-- > 0)

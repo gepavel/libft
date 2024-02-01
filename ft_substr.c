@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:47:24 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 15:43:33 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 14:15:15 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char		*str;
 	size_t		i;
-
+	
+	if (!s)
+		return (NULL);
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);

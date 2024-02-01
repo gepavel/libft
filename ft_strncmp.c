@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:32:49 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 13:52:30 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:41:03 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (s1[i] == s2[i] && i < n)
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
 	{
 		i++;
 		if (!(i < n))

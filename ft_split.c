@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:06:31 by gepavel           #+#    #+#             */
-/*   Updated: 2024/01/30 22:20:32 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:11:01 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 
 int	ft_c_words(const char *s, char c)
 {
-	int	count;
+	int		count;
+	int		i;
+	int		flag;
 
 	count = 0;
-	while (*s)
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		if (s[i] == c)
+			flag = 0;
+		else if (flag == 0)
+		{
 			count++;
-		while (*s != c && *s)
-			s++;
+			flag = 1;
+		}
+		s++;
 	}
-	printf("count=%d:\n", count);
 	return (count);
 }
 
@@ -62,11 +68,11 @@ char	**ft_split(const char *s, char c)
 		{
 			s_list[i] = malloc(ft_wordlen(s, c) + 1);
 			j = 0;
-			while (*s != '\0' && *s != c) 
+			while (*s && *s != c)
 				s_list[i][j++] = (char)*s++;
-			s_list[i++][j++] = '\0';
+			s_list[i++][j] = '\0';
 		}
 	}
-	s_list[i][0] = '\0';
+	s_list[i] = 0;
 	return (s_list);
 }
