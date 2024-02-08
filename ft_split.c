@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:06:31 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/01 20:02:45 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/08 12:40:38 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	ft_c_words(const char *s, char c)
 	int		flag;
 
 	count = 0;
+	flag = 0;
 	while (*s != '\0')
 	{
 		if (*s == c)

@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:20:52 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/06 12:34:47 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/08 12:49:53 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!*lst)
+	t_list	*aux;
+
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+	{
 		*lst = new;
-	else if (new)
-		lst[ft_lstsize(*lst) - 1]->next = new;
+		return ;
+	}
+	aux = *lst;
+	while (aux->next)
+		aux = aux->next;
+	aux->next = new;
 }
