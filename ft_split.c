@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:06:31 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/01 19:45:27 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 20:02:45 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_freelist(char **list, size_t len)
 	return (0);
 }
 
-int	ft_c_words(const char *s, char c)
+static int	ft_c_words(const char *s, char c)
 {
 	int		count;
 	int		flag;
@@ -39,7 +39,7 @@ int	ft_c_words(const char *s, char c)
 	return (count);
 }
 
-size_t	ft_wordlen(const char *s, char c)
+static size_t	ft_wordlen(const char *s, char c)
 {
 	size_t		i;
 

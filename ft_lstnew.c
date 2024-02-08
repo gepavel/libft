@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gepavel <gepavel@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 11:17:56 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/06 11:47:21 by gepavel          ###   ########.fr       */
+/*   Created: 2024/02/01 20:47:24 by gepavel           #+#    #+#             */
+/*   Updated: 2024/02/01 20:50:22 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*list;
-	
-	list = malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	t_list
+
+	return (s_list)
 }

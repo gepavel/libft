@@ -6,13 +6,13 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:33:13 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/01 17:48:27 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/01 20:03:09 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_int_len(int n)
+static int	ft_int_len(int n)
 {
 	int		i;
 
