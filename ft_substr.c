@@ -6,7 +6,7 @@
 /*   By: gepavel <gepavel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:47:24 by gepavel           #+#    #+#             */
-/*   Updated: 2024/02/01 18:43:49 by gepavel          ###   ########.fr       */
+/*   Updated: 2024/02/27 11:38:49 by gepavel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	i = ft_strlen(s);
 	if (start >= i)
 		return (ft_strdup(""));
-	if (len >= i)
+	if (len >= i - start)
 		len = i - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)

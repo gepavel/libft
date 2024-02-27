@@ -3,7 +3,7 @@ NAME = libft.a
 
 CC = clang
 
-CFLAGS = -Wall -Werror -Wextra  
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 NAMELIB = libft.h
 
@@ -26,6 +26,7 @@ SRC =	ft_isalpha.c 		ft_isdigit.c		ft_isalnum.c	\
 
 OBJ	= $(SRC:.c=.o)
 
+## BONUS PART linked list:
 SRC_B =	ft_lstnew.c			ft_lstadd_front.c	ft_lstsize.c	\
 		ft_lstlast.c		ft_lstadd_back.c	ft_lstdelone.c	\
 		ft_lstclear.c		ft_lstiter.c		ft_lstmap.c
@@ -45,4 +46,3 @@ fclean: clean
 re: fclean all
 
 .PHONY:bonus all clean fclean re
-
